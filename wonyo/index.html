@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.2/howler.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            -moz-box-sizing:border-box;
+            -webkit-box-sizing:border-box;
+            box-sizing:border-box;
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .image {
+            background-image: url(https://pbs.twimg.com/media/D4E_guVXkAA9b8P.jpg);
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            overflow: hidden;
+            background-position: -218px -204px;
+            display: inline-block;
+        }
+        .image img {
+            width: 100%;
+        }
+        .wrapper {
+            text-align: center;
+            padding-top: 200px;
+        }
+        #lnpad {
+
+        }
+        .circle_wrap span {
+            position: absolute;
+            right: 8px;
+            top: 15px;
+            font-size: 13px;
+            color: #7D7E88;
+        }
+        #pads {
+            position: relative;
+            display: inline-block;
+            width:590px;
+        }
+        .module {
+            background-color:#61636d;
+            -moz-border-radius:.5em;
+            -webkit-border-radius:.5em;
+            -o-border-radius:.5em;
+            border-radius:.5em;
+            padding:1.25em .9375em;
+        }
+        .pad {
+            background-color:#bbb;
+            -moz-border-radius:5px;
+            -webkit-border-radius:5px;
+            -o-border-radius:5px;
+            border-radius:5px;
+            cursor:pointer;
+            float:left;
+            width: 70px;
+            height: 70px;
+            margin:.3125em;
+        }
+        /* https://gall.dcinside.com/mgallery/board/view/?id=mnet_k&no=7124794 */
+        #yada:hover {
+            /* 에 싫다 */
+            background: radial-gradient(#ffffff, #fab2b2);
+            /*facea1 fcfcbf b9fbcf b3d2ff d6aef8 fac0f8*/
+        }
+        #daisuki:hover {
+            /* 완전 좋아 */
+            background: radial-gradient(#ffffff, #facea1);
+            /*facea1 fcfcbf b9fbcf b3d2ff d6aef8 fac0f8*/
+        }
+        #hontoni:hover {
+            /* 정말로 */
+            background: radial-gradient(#ffffff, #fcfcbf);
+            /*facea1 fcfcbf b9fbcf b3d2ff d6aef8 fac0f8*/
+        }
+        #sasuga:hover {
+            /* 역시나 */
+            background: radial-gradient(#ffffff, #b9fbcf);
+            /*facea1 fcfcbf b9fbcf b3d2ff d6aef8 fac0f8*/
+        }
+        #shikkarishiteyo:hover {
+            /* 똑바로 해*/
+            background: radial-gradient(#ffffff, #b3d2ff);
+            /*facea1 fcfcbf b9fbcf b3d2ff d6aef8 fac0f8*/
+        }
+        #start:hover {
+            /* 스타트 */
+            background: radial-gradient(#ffffff, #d6aef8);
+            /*facea1 fcfcbf b9fbcf b3d2ff d6aef8 fac0f8*/
+        }
+        #suteki:hover {
+            /* 멋져 */
+            background: radial-gradient(#ffffff, #fac0f8);
+            /*facea1 fcfcbf b9fbcf b3d2ff d6aef8 fac0f8*/
+        }
+
+    </style>
+</head>
+<body>
+
+<div>
+    <div class="wrapper">
+        <div class="image">
+        </div>
+        <h1>WONYO BOT</h1>
+        <div id="lnpad">
+            <div id="pads" class="module">
+                <div id="yada" class="pad"></div>
+                <div id="daisuki" class="pad"></div>
+                <div id="hontoni" class="pad"></div>
+                <div id="sasuga" class="pad"></div>
+                <div id="shikkarishiteyo" class="pad"></div>
+                <div id="start" class="pad"></div>
+                <div id="suteki" class="pad"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</div>
+<script>
+    var yada = new Howl({
+            src: ['./assets/sound/yada.m4a']
+        }),
+        daisuki = new Howl({
+            src: ['./assets/sound/daisuki.m4a']
+        }),
+        hontoni = new Howl({
+            src: ['./assets/sound/hontoni.m4a']
+        }),
+        sasuga = new Howl({
+            src: ['./assets/sound/sasuga.m4a']
+        }),
+        shikkarishiteyo = new Howl({
+            src: ['./assets/sound/shikkarishiteyo.m4a']
+        }),
+        start = new Howl({
+            src: ['./assets/sound/start.m4a']
+        }),
+        suteki = new Howl({
+            src: ['./assets/sound/suteki.m4a']
+        });
+
+    $('#yada').on('click',function(){
+        yada.play();
+    })
+    $('#daisuki').on('click',function(){
+        daisuki.play();
+    })
+    $('#hontoni').on('click',function(){
+        hontoni.play();
+    })
+    $('#sasuga').on('click',function(){
+        sasuga.play();
+    })
+    $('#shikkarishiteyo').on('click',function(){
+        shikkarishiteyo.play();
+    })
+    $('#start').on('click',function(){
+        start.play();
+    })
+    $('#suteki').on('click',function(){
+        suteki.play();
+    })
+</script>
+</body>
+</html>
